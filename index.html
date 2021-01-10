@@ -1,0 +1,107 @@
+<html>
+
+<head>
+   <!--<link rel="stylesheet" type="text/reset" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <button onclick="game()">Start-Rock-Paper-Scissors</button>
+<script>
+    
+
+
+
+    function getRandom() {
+        return Math.random();
+    }
+
+    function computerPlay() {
+
+     //Randomly return either 'Rock','Paper','Scissors'   
+
+        integer = getRandom();
+
+    if (integer < 0.33) {
+        return "Rock"
+
+    } else if (integer <= 0.66) {
+        return "Paper"
+
+    } else {
+        return "Scissors"
+    }
+
+}
+
+
+    function playRound() {
+
+        const playerSelection = prompt("Choose Rock, Paper or Scissors", "Rock");
+
+        const computerSelection = computerPlay()
+
+      if (computerSelection + playerSelection === "RockPaper") {
+         return 'Computer Chose Rock, You Chose Paper. You Win!'
+      }
+      else if (computerSelection + playerSelection === "PaperScissors") {
+          return 'Computer Chose Paper, You Chose Scissors. You Win!'
+      }
+      else if (computerSelection + playerSelection === "ScissorsRock") {
+          return 'Computer Chose Scissors, You Chose Rock. You Win!'
+      }
+      else if (computerSelection + playerSelection === "RockScissors") {
+          return 'Computer Chose Rock, You Chose Scissors. You Lose!'
+      }
+      else if (computerSelection + playerSelection === "PaperRock") {
+          return 'Computer Chose Paper, You Chose Rock. You Lose!'
+      }
+      else if (computerSelection + playerSelection === "ScissorsPaper") {
+          return 'Computer Chose Scissors, You Chose Paper. You Lose!'
+      }
+      else if (computerSelection + playerSelection === "RockRock") {
+          return 'Rock & Rock. TieBreaker!'
+      }
+      else if (computerSelection + playerSelection === "PaperPaper") {
+          return 'Paper & Paper. TieBreaker!'
+      }
+      else if (computerSelection + playerSelection === "ScissorsScissors") {
+          return 'Scissors & Scissors. TieBreaker!'
+      }
+      else
+        alert('Please select one of three choices!')
+    }
+
+        // your code here!
+
+        //return string that declares the winnner of the round like so "You Lose! Paper Beats Rock"
+        //1. make your function case insensitive (so users can input rock, ROCK, RocK or any variation)
+        //IMPORTANT make sure you "return" results of this function call. not console.log()
+        function game() {
+
+const roundOneResults = playRound();
+console.log(roundOneResults)
+
+const roundTwoResults = playRound();
+console.log(roundTwoResults)
+
+const roundThreeResults = playRound();
+console.log(roundThreeResults)
+
+const roundFourResults = playRound();
+console.log(roundFourResults)
+
+const roundFiveResults = playRound();
+console.log(roundFiveResults)
+
+//use playRound inside this function to play a 5 round game that keeps score and reports a winner or loser at the end.
+//we don't know loops so just call your playRound function 5 times in a row.
+//in this function you can display console.log() to show results of each round and the winner at the end
+//use prompt() to get input from the user
+}
+    
+</script>
+</body>
+
+</html>
