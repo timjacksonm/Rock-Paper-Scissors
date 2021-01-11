@@ -8,10 +8,11 @@
 
 <body>
     <div class="wrapper">
-        <div class="item" style="color: black;">Header</div>
+        <div class="item headerfooterstyle"></div>
 
-        <div class="item" style="color: black;">Menu
+        <div class="item topMenu">
             <button onclick="game()">Start-Rock-Paper-Scissors</button>
+            <div>results</div>
         </div>
 
         <div class="item flexchild">
@@ -21,13 +22,10 @@
          
         </div>
 
-        <div>Footer</div>
+        <div class="headerfooterstyle item"></div>
 
     </div>
 <script>
-    
-
-
 
     function getRandom() {
         return Math.random();
@@ -54,7 +52,7 @@
 
     function playRound() {
 
-        const playerSelection = prompt("Choose Rock, Paper or Scissors", "Rock");
+        const playerSelection = prompt("Choose Rock, Paper or Scissors")
 
         const computerSelection = computerPlay()
 
@@ -87,6 +85,7 @@
       }
       else
         alert('Please select one of three choices!')
+        
     }
 
         // your code here!
@@ -94,7 +93,7 @@
         //return string that declares the winnner of the round like so "You Lose! Paper Beats Rock"
         //1. make your function case insensitive (so users can input rock, ROCK, RocK or any variation)
         //IMPORTANT make sure you "return" results of this function call. not console.log()
-        function game() {
+    function game() {
 
 const roundOneResults = playRound();
 console.log(roundOneResults)
