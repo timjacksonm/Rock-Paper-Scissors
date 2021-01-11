@@ -1,13 +1,29 @@
 <html>
 
 <head>
-   <!--<link rel="stylesheet" type="text/reset" href="reset.css" />
-    <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+   <link rel="stylesheet" type="text/reset" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-    <button onclick="game()">Start-Rock-Paper-Scissors</button>
+    <div class="wrapper">
+        <div class="item" style="color: black;">Header</div>
+
+        <div class="item" style="color: black;">Menu
+            <button onclick="game()">Start-Rock-Paper-Scissors</button>
+        </div>
+
+        <div class="item flexchild">
+         <input value="Rock alt="Rock" type="image" src="./graphics/1.jpg" class="resize">
+         <input value="Paper" alt="Paper" type="image" src="./graphics/2.jpg" class="resize">
+         <input value="Scissors" alt="Scissors" type="image" src="./graphics/3.jpg" class="resize">
+         
+        </div>
+
+        <div>Footer</div>
+
+    </div>
 <script>
     
 
