@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -11,14 +12,16 @@
         <div class="item headerfooterstyle"></div>
 
         <div class="item topMenu">
-            <button onclick="game()">Start-Rock-Paper-Scissors</button>
-            <div>results</div>
+            <input type="image" src="graphics/4.png" onclick="game()" style="width: 150px;"></input>
+            <li id="PS" style="list-style-type: none;">Player Score: 0 </li>
+            <li id="CS" style="list-style-type: none;">Computer Score: 0 </li>
+            <div style="align-self: center;">Best of 5 Rounds. Change Dialog Each Round</div>
         </div>
 
         <div class="item flexchild">
-         <input value="Rock alt="Rock" type="image" src="./graphics/1.jpg" class="resize">
-         <input value="Paper" alt="Paper" type="image" src="./graphics/2.jpg" class="resize">
-         <input value="Scissors" alt="Scissors" type="image" src="./graphics/3.jpg" class="resize">
+         <input src="./graphics/1.jpg" value="Rock" alt="Rock Image" type="image" id="data1" class="resize">
+         <input src="./graphics/2.jpg" value="Paper" alt="Paper Image" type="image" id="data2" class="resize">
+         <input src="./graphics/3.jpg" value="Scissors" alt="Scissors Image" type="image" id="data3" class="resize">
          
         </div>
 
@@ -49,50 +52,45 @@
 
 }
 
-
     function playRound() {
 
-        const playerSelection = prompt("Choose Rock, Paper or Scissors")
+        let playerInput = prompt("Choose Rock, Paper or Scissors")
+        playerSelection = playerInput.toLowerCase();
+        let computerInput = computerPlay()
+        computerSelection = computerInput.toLowerCase();
 
-        const computerSelection = computerPlay()
-
-      if (computerSelection + playerSelection === "RockPaper") {
+      if (computerSelection + playerSelection === "rockpaper") {
          return 'Computer Chose Rock, You Chose Paper. You Win!'
       }
-      else if (computerSelection + playerSelection === "PaperScissors") {
+      else if (computerSelection + playerSelection === "paperscissors") {
           return 'Computer Chose Paper, You Chose Scissors. You Win!'
       }
-      else if (computerSelection + playerSelection === "ScissorsRock") {
+      else if (computerSelection + playerSelection === "scissorsrock") {
           return 'Computer Chose Scissors, You Chose Rock. You Win!'
       }
-      else if (computerSelection + playerSelection === "RockScissors") {
+      else if (computerSelection + playerSelection === "rockscissors") {
           return 'Computer Chose Rock, You Chose Scissors. You Lose!'
       }
-      else if (computerSelection + playerSelection === "PaperRock") {
+      else if (computerSelection + playerSelection === "paperrock") {
           return 'Computer Chose Paper, You Chose Rock. You Lose!'
       }
-      else if (computerSelection + playerSelection === "ScissorsPaper") {
+      else if (computerSelection + playerSelection === "scissorspaper") {
           return 'Computer Chose Scissors, You Chose Paper. You Lose!'
       }
-      else if (computerSelection + playerSelection === "RockRock") {
+      else if (computerSelection + playerSelection === "rockrock") {
           return 'Rock & Rock. TieBreaker!'
       }
-      else if (computerSelection + playerSelection === "PaperPaper") {
+      else if (computerSelection + playerSelection === "paperpaper") {
           return 'Paper & Paper. TieBreaker!'
       }
-      else if (computerSelection + playerSelection === "ScissorsScissors") {
+      else if (computerSelection + playerSelection === "scissorsscissors") {
           return 'Scissors & Scissors. TieBreaker!'
       }
       else
         alert('Please select one of three choices!')
         
     }
-
-        // your code here!
-
-        //return string that declares the winnner of the round like so "You Lose! Paper Beats Rock"
-        //1. make your function case insensitive (so users can input rock, ROCK, RocK or any variation)
-        //IMPORTANT make sure you "return" results of this function call. not console.log()
+      
     function game() {
 
 const roundOneResults = playRound();
@@ -115,7 +113,11 @@ console.log(roundFiveResults)
 //in this function you can display console.log() to show results of each round and the winner at the end
 //use prompt() to get input from the user
 }
-    
+
+
+//return string that declares the winnner of the round like so "You Lose! Paper Beats Rock"
+//1. make your function case insensitive (so users can input rock, ROCK, RocK or any variation)
+//IMPORTANT make sure you "return" results of this function call. not console.log()
 </script>
 </body>
 
