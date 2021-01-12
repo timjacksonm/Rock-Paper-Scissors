@@ -19,9 +19,9 @@
         </div>
 
         <div class="item flexchild">
-         <input src="./graphics/1.jpg" value="Rock" alt="Rock Image" type="image" id="data1" class="resize">
-         <input src="./graphics/2.jpg" value="Paper" alt="Paper Image" type="image" id="data2" class="resize">
-         <input src="./graphics/3.jpg" value="Scissors" alt="Scissors Image" type="image" id="data3" class="resize">
+         <input src="./graphics/1.jpg" alt="Rock Image" type="image" id="data1" class="resize">
+         <input src="./graphics/2.jpg" alt="Paper Image" type="image" id="data2" class="resize">
+         <input src="./graphics/3.jpg" alt="Scissors Image" type="image" id="data3" class="resize">
          
         </div>
 
@@ -52,67 +52,115 @@
 
 }
 
+
     function playRound() {
 
         let playerInput = prompt("Choose Rock, Paper or Scissors")
         playerSelection = playerInput.toLowerCase();
         let computerInput = computerPlay()
         computerSelection = computerInput.toLowerCase();
+        
+
+        
 
       if (computerSelection + playerSelection === "rockpaper") {
          return 'Computer Chose Rock, You Chose Paper. You Win!'
-      }
-      else if (computerSelection + playerSelection === "paperscissors") {
+
+      } else if (computerSelection + playerSelection === "paperscissors") {
           return 'Computer Chose Paper, You Chose Scissors. You Win!'
-      }
-      else if (computerSelection + playerSelection === "scissorsrock") {
+      } else if (computerSelection + playerSelection === "scissorsrock") {
           return 'Computer Chose Scissors, You Chose Rock. You Win!'
-      }
-      else if (computerSelection + playerSelection === "rockscissors") {
+
+      } else if (computerSelection + playerSelection === "rockscissors") {
           return 'Computer Chose Rock, You Chose Scissors. You Lose!'
-      }
-      else if (computerSelection + playerSelection === "paperrock") {
+
+      } else if (computerSelection + playerSelection === "paperrock") {
           return 'Computer Chose Paper, You Chose Rock. You Lose!'
-      }
-      else if (computerSelection + playerSelection === "scissorspaper") {
+
+      } else if (computerSelection + playerSelection === "scissorspaper") {
           return 'Computer Chose Scissors, You Chose Paper. You Lose!'
-      }
-      else if (computerSelection + playerSelection === "rockrock") {
+
+      } else if (computerSelection + playerSelection === "rockrock") {
           return 'Rock & Rock. TieBreaker!'
-      }
-      else if (computerSelection + playerSelection === "paperpaper") {
+
+      } else if (computerSelection + playerSelection === "paperpaper") {
           return 'Paper & Paper. TieBreaker!'
-      }
-      else if (computerSelection + playerSelection === "scissorsscissors") {
+
+      } else if (computerSelection + playerSelection === "scissorsscissors") {
           return 'Scissors & Scissors. TieBreaker!'
       }
-      else
-        alert('Please select one of three choices!')
-        
-    }
       
+    }
+        
+
     function game() {
 
-const roundOneResults = playRound();
-console.log(roundOneResults)
+        
 
-const roundTwoResults = playRound();
-console.log(roundTwoResults)
+let roundResults = playRound();
+console.log(roundResults);
+let x = 0;
+let y = 0;
+let scoreWin = roundResults.includes("Win!");
+let scoreLose = roundResults.includes("Lose!");
+let sBoard = scoreReport();
+console.log(sBoard)
 
-const roundThreeResults = playRound();
-console.log(roundThreeResults)
+roundResults = playRound();
+console.log(roundResults);
+scoreWin = roundResults.includes("Win!");
+scoreLose = roundResults.includes("Lose!");
+sBoard = scoreReport();
+console.log(sBoard);
 
-const roundFourResults = playRound();
-console.log(roundFourResults)
+roundResults = playRound();
+console.log(roundResults);
+scoreWin = roundResults.includes("Win!");
+scoreLose = roundResults.includes("Lose!");
+sBoard = scoreReport();
+console.log(sBoard);
 
-const roundFiveResults = playRound();
-console.log(roundFiveResults)
+roundResults = playRound();
+console.log(roundResults);
+scoreWin = roundResults.includes("Win!");
+scoreLose = roundResults.includes("Lose!");
+sBoard = scoreReport();
+console.log(sBoard);
+
+roundResults = playRound();
+console.log(roundResults);
+scoreWin = roundResults.includes("Win!");
+scoreLose = roundResults.includes("Lose!");
+sBoard = scoreReport();
+console.log(sBoard);
+
+function scoreReport() {
+
+if (scoreWin ===  true) {
+  x++;
+let pScore = "Player Score = " + x;
+let cScore = "Computer Score = " + y;
+let sBoard = pScore + " " + cScore;
+sBoard;
+return sBoard;
+
+} else if (scoreLose === true) {
+  y++;
+let pScore = "Player Score = " + x;
+let cScore = "Computer Score = " + y;
+let sBoard = pScore + " " + cScore;
+sBoard;
+return sBoard;
+}
+}
 
 //use playRound inside this function to play a 5 round game that keeps score and reports a winner or loser at the end.
 //we don't know loops so just call your playRound function 5 times in a row.
 //in this function you can display console.log() to show results of each round and the winner at the end
 //use prompt() to get input from the user
 }
+
+
 
 
 //return string that declares the winnner of the round like so "You Lose! Paper Beats Rock"
