@@ -1,13 +1,13 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body{
-  background:#2F394D;
+body {
+  background: #2f394d;
 }
 
-.wrapper{
+.wrapper {
   width: 100vh;
   margin: 0 auto;
   display: grid;
@@ -15,39 +15,36 @@ body{
   grid-template-rows: 15px 1fr 1fr 15px;
   grid-template-columns: auto-fit, minmax(100px, 1fr);
   gap: 30px;
-  
 }
-.item{
-  background-color: #04B491;
+.item {
+  background-color: #04b491;
   color: #000000;
   padding: 10px;
 }
 
 .flexchild {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-  background-color: #00073D;
-  
+  background-color: #00073d;
 }
 
 .resize {
   width: auto;
   hegiht: auto;
   max-width: 95%;
-
 }
 
 .headerfooterstyle {
-  background-color: #56666B;
+  background-color: #56666b;
   padding: 0;
   height: 1em;
   text-align: center;
 }
 
 .topMenu {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 1fr 1fr 2fr;
   justify-items: center;
