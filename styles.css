@@ -29,13 +29,21 @@ body {
   align-items: center;
   background-color: #00073d;
 }
-
+.resetButton {
+  grid-column-start: 2;
+  height: 25%;
+  width: 20%;
+}
 .resize {
   width: auto;
   hegiht: auto;
   max-width: 95%;
+  border-radius: 15%;
+  outline-style: none;
 }
-
+input:hover {
+  border: 2px solid #04b491;
+}
 .headerfooterstyle {
   background-color: #56666b;
   padding: 0;
@@ -43,10 +51,52 @@ body {
   text-align: center;
 }
 
-.topMenu {
+div.topMenu {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 3fr 1fr 1fr 2fr;
-  justify-items: center;
-  align-items: flex-end;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2fr 1fr 1fr 2fr;
+  grid-template-areas:
+    "startButton startButton"
+    "playerScore computerScore"
+    "pNum cNum"
+    "dialogChange dialogChange";
+}
+
+input.gridStatButton {
+  grid-area: startButton;
+}
+p.playerScore {
+  grid-area: playerScore;
+  text-align: center;
+  align-self: center;
+  font-size: 150%;
+  font-weight: bolder;
+}
+p.pNum {
+  grid-are: pNum;
+  grid-row-start: 3;
+  text-align: center;
+  align-self: center;
+  font-size: 150%;
+}
+p.computerScore {
+  grid-area: computerScore;
+  text-align: center;
+  align-self: center;
+  font-size: 150%;
+  font-weight: bolder;
+}
+p.cNum {
+  grid-area: cNum;
+  text-align: center;
+  align-self: center;
+  font-size: 150%;
+}
+div.dialogChange {
+  grid-area: dialogChange;
+  text-align: center;
+  align-self: center;
+  font-size: 130%;
+  color: blue;
+  font-weight: bold;
 }

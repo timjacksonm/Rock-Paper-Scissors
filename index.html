@@ -13,9 +13,12 @@
         <div class="item headerfooterstyle"></div>
 
         <div class="item topMenu">
-            <input id="startButton" type="image" src="graphics/4.png" onclick="startGame()" style="width: 150px;"></input>
-            <li class="playerScore" id="PS" style="list-style-type: none;">Player Score: 0 </li>
-            <li class="computerScore" id="CS" style="list-style-type: none;">Computer Score: 0 </li>
+            <input class="gridStartButton" id="startButton" type="image" src="graphics/4.png" onclick="startGame()" style="width: auto; height: auto; max-width: 25%; max-height: 25%; align-self: center; justify-self: center;grid-column-start: 1;
+  grid-column-end: 3;outline: none;"></input>
+            <p class="playerScore" id="PS" style="list-style-type: none;">Player Score</p>
+            <p type="number" class="pNum">0</p>
+            <p class="computerScore" id="CS" style="list-style-type: none;">Computer Score</p>
+            <p type="number" class="cNum">0</p>
             <div class="dialogChange" style="align-self: center;">Best of 5 Rounds.</div>
         </div>
 

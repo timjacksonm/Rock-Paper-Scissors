@@ -89,7 +89,37 @@ function displayChoices() {
 
     const button = document.getElementById('startButton');
     button.disabled = true;
+
+    const dialogDiv = document.querySelector('div.dialogChange');
+
+    let dialogText = "Go ahead. Choose your weapon!"
+
+    dialogDiv.textContent = dialogText;
 };
+function removeChoices() {
+    const gameChoices = document.querySelector('div.gameChoices');
+        
+    const removeRock = document.getElementById('data1');
+    const removePaper = document.getElementById('data2');
+    const removeScissors = document.getElementById('data3');
+            
+    removeRock.remove();
+    removePaper.remove();
+    removeScissors.remove();
+
+    const roundOver = document.createElement('button');
+    let dialogText = "Click Me! Reset Game!"
+    roundOver.textContent = dialogText;
+    roundOver.setAttribute('onClick',"reset()")
+    roundOver.setAttribute('id', 'reset');
+    roundOver.classList.add('resetButton')
+    gameChoices.appendChild(roundOver);
+    
+    const selectResetButton = document.createElement('button.reset');
+};
+function reset() {
+    location.reload();
+}
 function roundDialog() {
     const dialogDiv = document.querySelector('div.dialogChange');
 
@@ -97,6 +127,23 @@ function roundDialog() {
 
     dialogDiv.textContent = dialogText;
 }
+function uptScore() {
+
+    let argArray = arguments;
+    results = argArray[0].toString();
+
+    const playerScorePara = document.querySelector('p.pNum');
+    const computerScorePara = document.querySelector('p.cNum');
+    
+    x = Number(playerScorePara.textContent);
+    y = Number(computerScorePara.textContent);
+
+    if (results.includes("Win")) {
+        playerScorePara.textContent = ++x;
+    } else if (results.includes("Lose")) {
+        computerScorePara.textContent = ++y;
+    }
+};
 function startGame() {
     
     displayChoices();
@@ -111,6 +158,34 @@ function startGame() {
     
 
     roundDialog(roundResults);
+    uptScore(roundResults);
+    scoreCapReached();
+    
+    
+    function scoreCapReached() {
+        const playerScorePara = document.querySelector('p.pNum');
+        const computerScorePara = document.querySelector('p.cNum');
+        const dialogDiv = document.querySelector('div.dialogChange');
+
+        currentScore = Number(playerScorePara.textContent);
+        currentScore2 = Number(computerScorePara.textContent);
+        pWin = "You won! Best of 5 rounds Congratulations!"
+        cWin = "You lost! Best of 5 rounds. Try again!"
+
+
+
+
+        if (currentScore === +5) {
+            dialogDiv.textContent = pWin;
+            removeChoices();
+            return
+        } else if (currentScore2 === 5) {
+            dialogDiv.textContent = cWin;
+            removeChoices();
+            return
+        } else
+        return
+    };
                 }
             )
         }
