@@ -26,22 +26,22 @@ function playRound() {
     computerSelection = computerInput.toLowerCase();
     
   if (computerSelection + playerSelection === "rockpaper") {
-     return 'Computer Chose Rock, You Chose Paper. You Win!';
+     return 'You Chose Paper, Computer Chose Rock. You Win!';
 
   } else if (computerSelection + playerSelection === "paperscissors") {
-      return 'Computer Chose Paper, You Chose Scissors. You Win!';
+      return 'You Chose Scissors, Computer Chose Paper. You Win!';
 
   } else if (computerSelection + playerSelection === "scissorsrock") {
-      return 'Computer Chose Scissors, You Chose Rock. You Win!';
+      return 'You Chose Rock, Computer Chose Scissors. You Win!';
 
   } else if (computerSelection + playerSelection === "rockscissors") {
-      return 'Computer Chose Rock, You Chose Scissors. You Lose!';
+      return 'You Chose Scissors, Computer Chose Rock. You Lose!';
 
   } else if (computerSelection + playerSelection === "paperrock") {
-      return 'Computer Chose Paper, You Chose Rock. You Lose!';
+      return 'You Chose Rock, Computer Chose Paper. You Lose!';
 
   } else if (computerSelection + playerSelection === "scissorspaper") {
-      return 'Computer Chose Scissors, You Chose Paper. You Lose!';
+      return 'You Chose Paper, Computer Chose Scissors. You Lose!';
 
   } else if (computerSelection + playerSelection === "rockrock") {
       return 'Rock & Rock. TieBreaker!';
@@ -90,6 +90,13 @@ function displayChoices() {
     const button = document.getElementById('startButton');
     button.disabled = true;
 };
+function roundDialog() {
+    const dialogDiv = document.querySelector('div.dialogChange');
+
+    let dialogText = arguments[0].toString();
+
+    dialogDiv.textContent = dialogText;
+}
 function startGame() {
     
     displayChoices();
@@ -102,7 +109,8 @@ function startGame() {
     let roundResults = playRound(button.value);
     playRound(button.value);
     
-    console.log(roundResults);
+
+    roundDialog(roundResults);
                 }
             )
         }
