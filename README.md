@@ -17,8 +17,7 @@
 - [✔️] Create a reset button.
 - [✔️] Push Project to GitHub!
 
-###Changelog:
-
+**Changelog:**
 01/10/2021
 
 -added some functions that all work.
